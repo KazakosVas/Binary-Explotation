@@ -103,12 +103,14 @@ So Saved_RBP+8 is the address main will return.
 
 
 
-
+## FInd our shellcode
 We find where our shellcode is in memory
 ![](./images/grepexploitedu.png?)
 So our shellcode is found in memory address 0x7fffffffee2+strlen("ExploitEducation=) = 0x7fffffffef3
 
+
 We will print memory of main before leave command
+
 ![](./images/mainbeforeleaveclack.png?)
 
 We see that the address of our shellcode is placed in stack so we modify the last byte of Saved_rbp to be \x40
