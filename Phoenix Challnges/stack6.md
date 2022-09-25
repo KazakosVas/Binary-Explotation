@@ -83,7 +83,7 @@ inspect the memory before and after strncpy
 
 **Memory before strncpy**. We overflow with A 
 
-![](./images/bfrstrcpy.png?)
+![](./images/beforestrcpyblck.png?)
 
 **Memory After strncpy**. We overflow with A
 
