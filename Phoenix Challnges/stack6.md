@@ -105,7 +105,7 @@ So Saved_RBP+8 is the address main will return.
 
 ## FInd our shellcode
 We find where our shellcode is in memory
-![](./images/grepexploitedu.png?)
+![](./images/grepExplo.png?)
 So our shellcode is found in memory address 0x7fffffffee2+strlen("ExploitEducation=) = 0x7fffffffef3
 
 
