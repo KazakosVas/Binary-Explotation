@@ -79,7 +79,7 @@ inspect the memory before and after strncpy
 
 
 
-![](./images/phoenix2.2.png?)
+![](./images/disassmblegreet.png?)
 
 **Memory before strncpy**. We overflow with A 
 
@@ -87,7 +87,7 @@ inspect the memory before and after strncpy
 
 **Memory After strncpy**. We overflow with A
 
-![](./images/afterstrcpywhit.png?)
+![](./images/afterstrcpyblck.png?)
 
 
 
@@ -95,7 +95,7 @@ We can only affect the last byte of saved rbp. Changing the saved rbp allows us 
 
 Disassemble main
 
-![](./images/mainwhite.png?)
+![](./images/mainblack.png?)
 
 Leave command <==> RSP = RBP + pop from stack.
 
@@ -105,11 +105,11 @@ So Saved_RBP+8 is the address main will return.
 
 
 We find where our shellcode is in memory
-![](./images/grepwhite.png?)
+![](./images/grepexploitedu.png?)
 So our shellcode is found in memory address 0x7fffffffee2+strlen("ExploitEducation=) = 0x7fffffffef3
 
 We will print memory of main before leave command
-![](./images/mainbeforeleavewhite.png?)
+![](./images/mainbeforeleaveclack.png?)
 
 We see that the address of our shellcode is placed in stack so we modify the last byte of Saved_rbp to be \x40
 
@@ -120,6 +120,6 @@ Copy shellcode from
 
 
 Final Root shell
-![](./images/finalwhite.png?)
+![](./images/finaloutputblck.png?)
 
 
