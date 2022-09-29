@@ -83,11 +83,11 @@ inspect the memory before and after strncpy
 
 **Memory before strncpy**. We overflow with A 
 
-![](./images/beforestrcpyblck.png?)
+![](./images/beforestrcpy.png?)
 
 **Memory After strncpy**. We overflow with A
 
-![](./images/afterstrcpyblck.png?)
+![](./images/afterstrcpy.png?)
 
 
 
@@ -95,7 +95,7 @@ We can only affect the last byte of saved rbp. Changing the saved rbp allows us 
 
 Disassemble main
 
-![](./images/mainblack.png?)
+![](./images/main.png?)
 
 Leave command <==> RSP = RBP + pop from stack.
 
@@ -111,18 +111,18 @@ So our shellcode is found in memory address 0x7fffffffee2+strlen("ExploitEducati
 
 We will print the memory of main before leave command
 
-![](./images/mainbeforeleaveclack.png?)
+![](./images/mainbeforeleave.png?)
 
 We see that the address of our shellcode is placed in stack so we modify the last byte of Saved_rbp to be \x40
 
 ## Exploit Code
-![](./images/realshellblck.png?)
+![](./images/shell.png?)
 Copy shellcode from
 <i> [Shellcode](https://shell-storm.org/shellcode/files/shellcode-106.php)</i>
 
 
 Final Root shell
 
-![](./images/finaloutputblck.png?)
+![](./images/finaloutput.png?)
 
 
