@@ -5,7 +5,7 @@ Our goal is to solve this explotation challenge <i> [Stack6](https://exploit.edu
 A very interesting challenge because the overflow **only allows us to change the last byte of saved rbp.**
 
 ## Code to exploit
-```
+```c
 
 #include <err.h>
 #include <stdio.h>
@@ -58,7 +58,7 @@ int main(int argc, char **argv) {
 ```
 ## Problem of code
 It is obvious that the problem of the code is found at 
-```
+```c
 strncpy(buffer + strlen(buffer), who, maxSize);
 ```
 since this will overflow the buffer. We control the string (char *)who  because we control the environment variable ExploitEducation.
@@ -99,7 +99,7 @@ Disassemble main
 
 Leave command <==> RSP = RBP + pop from stack.
 
-So Saved_RBP+8 is the address main will return.
+So main will return to the address which is saved in Saved-RBP+8.
 
 
 
@@ -109,7 +109,7 @@ We find where our shellcode is in memory
 So our shellcode is found in memory address 0x7fffffffee2+strlen("ExploitEducation=) = 0x7fffffffef3
 
 
-We will print memory of main before leave command
+We will print the memory of main before leave command
 
 ![](./images/mainbeforeleaveclack.png?)
 
